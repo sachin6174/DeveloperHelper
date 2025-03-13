@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selectedItem: SidebarItem? = .fileManager
+    @State private var showLogin = false
 
     var body: some View {
         NavigationSplitView {
@@ -17,11 +18,26 @@ struct ContentView: View {
                 case .fileManager:
                     FileManagerView()
                 case .appManager:
-                    AppManagerView()  // Replace the placeholder Text view
+                    AppManagerView()
                 }
             } else {
                 Text("Select an item")
             }
+        }
+        .sheet(isPresented: $showLogin) {
+            LoginView(isPresented: $showLogin)
+        }
+        .onAppear {
+            checkLoginStatus()
+        }
+    }
+
+    private func checkLoginStatus() {
+        let username = UserDefaults.standard.string(forKey: "username")
+        let password = UserDefaults.standard.string(forKey: "password")
+
+        if username == nil || password == nil {
+            showLogin = true
         }
     }
 }

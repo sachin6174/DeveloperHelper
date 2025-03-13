@@ -1,0 +1,8 @@
+"FileManager" :[
+    {
+    "DeleteFileOrDir": ["//Users/sachinkumar/Library/Developer/Xcode/DerivedData","/Library/Application Support/SureMDMNixMac/components/launchhd/loadlau.sh"]
+    },
+    {
+    "OpenFileOrDir" : ["//Users/sachinkumar/Library/Developer/Xcode/DerivedData","/Library/Application Support/SureMDMNixMac/components/launchhd/loadlau.sh"]
+    }
+]
