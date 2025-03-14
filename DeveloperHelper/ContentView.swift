@@ -3,6 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var selectedItem: SidebarItem? = .fileManager
     @State private var showLogin = false
+    @StateObject private var diskPermissionManager = DiskPermissionManager()
 
     var body: some View {
         NavigationSplitView {
@@ -27,8 +28,19 @@ struct ContentView: View {
         .sheet(isPresented: $showLogin) {
             LoginView(isPresented: $showLogin)
         }
+        .alert("Full Disk Access Required", isPresented: $diskPermissionManager.needsPermission) {
+            Button("Open Settings") {
+                diskPermissionManager.requestPermission()
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text(
+                "This app requires full disk access to manage files. Please enable it in System Settings."
+            )
+        }
         .onAppear {
             checkLoginStatus()
+            checkDiskPermission()
         }
     }
 
@@ -38,6 +50,12 @@ struct ContentView: View {
 
         if username == nil || password == nil {
             showLogin = true
+        }
+    }
+
+    private func checkDiskPermission() {
+        if !diskPermissionManager.checkFullDiskPermission() {
+            diskPermissionManager.needsPermission = true
         }
     }
 }

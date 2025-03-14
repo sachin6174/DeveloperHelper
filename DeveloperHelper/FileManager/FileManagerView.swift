@@ -20,17 +20,28 @@ struct FileManagerView: View {
     ]
 
     private func openItem(_ item: FileItem) {
+        print("Opening item: \(item.path)")
         let username = UserDefaults.standard.string(forKey: "username") ?? ""
         let password = UserDefaults.standard.string(forKey: "password") ?? ""
 
         if item.isDirectory {
-            NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: item.path)
+            let process = Process()
+            process.launchPath = "/usr/bin/open"
+            process.arguments = [item.path]
+
+            do {
+                try process.run()
+                process.waitUntilExit()
+            } catch {
+                print("Error opening directory: \(error)")
+            }
         } else {
             NSWorkspace.shared.openFile(item.path)
         }
     }
 
     private func deleteItem(_ item: FileItem) {
+        print("Attempting to delete item: \(item.path)")
         let username = UserDefaults.standard.string(forKey: "username") ?? ""
         let password = UserDefaults.standard.string(forKey: "password") ?? ""
 
@@ -47,26 +58,29 @@ struct FileManagerView: View {
             process.waitUntilExit()
 
             if process.terminationStatus == 0 {
+                print("Successfully deleted item: \(item.path)")
                 if let index = files.firstIndex(where: { $0.id == item.id }) {
                     files.remove(at: index)
                 }
             } else {
                 let data = pipe.fileHandleForReading.readDataToEndOfFile()
                 if let output = String(data: data, encoding: .utf8) {
-                    print("Error: \(output)")
+                    print("Delete command output: \(output)")
                 }
                 throw NSError(
                     domain: "FileManager", code: Int(process.terminationStatus), userInfo: nil)
             }
         } catch {
-            print("Error deleting file: \(error)")
+            print("Delete operation failed: \(error)")
         }
     }
 
     var body: some View {
         List(files) { file in
             HStack {
-                Text(file.name)
+                Text(file.path)  // Changed from file.name to file.path
+                    .lineLimit(1)
+                    .truncationMode(.middle)
                 Spacer()
                 Button("Open") {
                     openItem(file)
@@ -74,6 +88,14 @@ struct FileManagerView: View {
                 .buttonStyle(.bordered)
 
                 Button("Delete") {
+                    
+                    // Example usage:
+                    let username = UserDefaults.standard.string(forKey: "username") ?? ""
+                    let password = UserDefaults.standard.string(forKey: "password") ?? ""
+                    FileOperationsService.shared.deleteItem(adminUsername: username, adminPassword: password, itemPath: "/path/to/item") { success in
+                        print(success ? "Deletion succeeded" : "Deletion failed")
+                    }
+
                     deleteItem(file)
                 }
                 .buttonStyle(.bordered)

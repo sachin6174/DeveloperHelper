@@ -6,8 +6,21 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6975FD8D2D84799D0084500A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		6975FCCA2D830EFB0084500A /* DeveloperHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeveloperHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6975FD8F2D84799D0084500A /* TerminalExecuter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TerminalExecuter; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +29,22 @@
 			path = DeveloperHelper;
 			sourceTree = "<group>";
 		};
+		6975FD902D84799D0084500A /* TerminalExecuter */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TerminalExecuter;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6975FCC72D830EFB0084500A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6975FD8C2D84799D0084500A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				6975FCCC2D830EFB0084500A /* DeveloperHelper */,
+				6975FD902D84799D0084500A /* TerminalExecuter */,
 				6975FCCB2D830EFB0084500A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				6975FCCA2D830EFB0084500A /* DeveloperHelper.app */,
+				6975FD8F2D84799D0084500A /* TerminalExecuter */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +97,28 @@
 			productReference = 6975FCCA2D830EFB0084500A /* DeveloperHelper.app */;
 			productType = "com.apple.product-type.application";
 		};
+		6975FD8E2D84799D0084500A /* TerminalExecuter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6975FD952D84799D0084500A /* Build configuration list for PBXNativeTarget "TerminalExecuter" */;
+			buildPhases = (
+				6975FD8B2D84799D0084500A /* Sources */,
+				6975FD8C2D84799D0084500A /* Frameworks */,
+				6975FD8D2D84799D0084500A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6975FD902D84799D0084500A /* TerminalExecuter */,
+			);
+			name = TerminalExecuter;
+			packageProductDependencies = (
+			);
+			productName = TerminalExecuter;
+			productReference = 6975FD8F2D84799D0084500A /* TerminalExecuter */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -83,6 +132,10 @@
 					6975FCC92D830EFB0084500A = {
 						CreatedOnToolsVersion = 16.2;
 					};
+					6975FD8E2D84799D0084500A = {
+						CreatedOnToolsVersion = 16.2;
+						LastSwiftMigration = 1620;
+					};
 				};
 			};
 			buildConfigurationList = 6975FCC52D830EFB0084500A /* Build configuration list for PBXProject "DeveloperHelper" */;
@@ -91,6 +144,11 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				es,
+				fr,
+				nl,
+				"nl-NL",
 			);
 			mainGroup = 6975FCC12D830EFB0084500A;
 			minimizedProjectReferenceProxies = 1;
@@ -100,6 +158,7 @@
 			projectRoot = "";
 			targets = (
 				6975FCC92D830EFB0084500A /* DeveloperHelper */,
+				6975FD8E2D84799D0084500A /* TerminalExecuter */,
 			);
 		};
 /* End PBXProject section */
@@ -116,6 +175,13 @@
 
 /* Begin PBXSourcesBuildPhase section */
 		6975FCC62D830EFB0084500A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6975FD8B2D84799D0084500A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -297,6 +363,37 @@
 			};
 			name = Release;
 		};
+		6975FD932D84799D0084500A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QA7BM7NDFK;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = in.sachinserver.DeveloperHelper.TerminalExecuter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TerminalExecuter/TerminalExecuter-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6975FD942D84799D0084500A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QA7BM7NDFK;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = in.sachinserver.DeveloperHelper.TerminalExecuter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TerminalExecuter/TerminalExecuter-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -314,6 +411,15 @@
 			buildConfigurations = (
 				6975FCDA2D830EFD0084500A /* Debug */,
 				6975FCDB2D830EFD0084500A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6975FD952D84799D0084500A /* Build configuration list for PBXNativeTarget "TerminalExecuter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6975FD932D84799D0084500A /* Debug */,
+				6975FD942D84799D0084500A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

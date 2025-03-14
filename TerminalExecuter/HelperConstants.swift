@@ -9,8 +9,8 @@ import Foundation
 
 enum HelperConstants {
     static let helpersFolder = "/Library/PrivilegedHelperTools/"
-    static let domain = "nl.root3.support.helper"
+    static let domain = "in.sachinserver.DeveloperHelper.TerminalExecuter"
     static let helperPath = helpersFolder + domain
-    static let mainAppBundleID = "nl.root3.support"
-    static let teamID = "98LJ4XBGYK"
+    static let mainAppBundleID = "in.sachinserver.DeveloperHelper"
+    static let teamID = "QA7BM7NDFK"
 }
