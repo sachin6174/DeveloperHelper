@@ -10,7 +10,7 @@
 		6975FD8D2D84799D0084500A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
+			dstPath = /usr/share/man/man1;
 			dstSubfolderSpec = 0;
 			files = (
 			);
@@ -23,6 +23,19 @@
 		6975FD8F2D84799D0084500A /* TerminalExecuter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TerminalExecuter; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		692CD6392D859B7E005619B6 /* Exceptions for "TerminalExecuter" folder in "DeveloperHelper" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				HelperConstants.swift,
+				PrivilegedHelperError.swift,
+				RemoteApplicationProtocol.swift,
+				SupportHelperProtocol.swift,
+			);
+			target = 6975FCC92D830EFB0084500A /* DeveloperHelper */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		6975FCCC2D830EFB0084500A /* DeveloperHelper */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -31,6 +44,9 @@
 		};
 		6975FD902D84799D0084500A /* TerminalExecuter */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				692CD6392D859B7E005619B6 /* Exceptions for "TerminalExecuter" folder in "DeveloperHelper" target */,
+			);
 			path = TerminalExecuter;
 			sourceTree = "<group>";
 		};
