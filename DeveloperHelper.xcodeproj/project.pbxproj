@@ -20,7 +20,7 @@
 
 /* Begin PBXFileReference section */
 		6975FCCA2D830EFB0084500A /* DeveloperHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeveloperHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6975FD8F2D84799D0084500A /* TerminalExecuter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TerminalExecuter; sourceTree = BUILT_PRODUCTS_DIR; };
+		6975FD8F2D84799D0084500A /* in.sachinserver.DeveloperHelper.TerminalExecuter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = in.sachinserver.DeveloperHelper.TerminalExecuter; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -83,7 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				6975FCCA2D830EFB0084500A /* DeveloperHelper.app */,
-				6975FD8F2D84799D0084500A /* TerminalExecuter */,
+				6975FD8F2D84799D0084500A /* in.sachinserver.DeveloperHelper.TerminalExecuter */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,9 +113,9 @@
 			productReference = 6975FCCA2D830EFB0084500A /* DeveloperHelper.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6975FD8E2D84799D0084500A /* TerminalExecuter */ = {
+		6975FD8E2D84799D0084500A /* in.sachinserver.DeveloperHelper.TerminalExecuter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6975FD952D84799D0084500A /* Build configuration list for PBXNativeTarget "TerminalExecuter" */;
+			buildConfigurationList = 6975FD952D84799D0084500A /* Build configuration list for PBXNativeTarget "in.sachinserver.DeveloperHelper.TerminalExecuter" */;
 			buildPhases = (
 				6975FD8B2D84799D0084500A /* Sources */,
 				6975FD8C2D84799D0084500A /* Frameworks */,
@@ -128,11 +128,11 @@
 			fileSystemSynchronizedGroups = (
 				6975FD902D84799D0084500A /* TerminalExecuter */,
 			);
-			name = TerminalExecuter;
+			name = in.sachinserver.DeveloperHelper.TerminalExecuter;
 			packageProductDependencies = (
 			);
 			productName = TerminalExecuter;
-			productReference = 6975FD8F2D84799D0084500A /* TerminalExecuter */;
+			productReference = 6975FD8F2D84799D0084500A /* in.sachinserver.DeveloperHelper.TerminalExecuter */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -174,7 +174,7 @@
 			projectRoot = "";
 			targets = (
 				6975FCC92D830EFB0084500A /* DeveloperHelper */,
-				6975FD8E2D84799D0084500A /* TerminalExecuter */,
+				6975FD8E2D84799D0084500A /* in.sachinserver.DeveloperHelper.TerminalExecuter */,
 			);
 		};
 /* End PBXProject section */
@@ -383,12 +383,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QA7BM7NDFK;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = in.sachinserver.DeveloperHelper.TerminalExecuter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TerminalExecuter/TerminalExecuter-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -399,12 +400,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QA7BM7NDFK;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = in.sachinserver.DeveloperHelper.TerminalExecuter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TerminalExecuter/TerminalExecuter-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
@@ -431,7 +433,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6975FD952D84799D0084500A /* Build configuration list for PBXNativeTarget "TerminalExecuter" */ = {
+		6975FD952D84799D0084500A /* Build configuration list for PBXNativeTarget "in.sachinserver.DeveloperHelper.TerminalExecuter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6975FD932D84799D0084500A /* Debug */,
